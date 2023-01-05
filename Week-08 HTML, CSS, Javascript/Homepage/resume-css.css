@@ -1,0 +1,240 @@
+body
+{
+    background-color: black;
+    background-image: url("Images/resume-background.jpg");
+    background-size: 700px 700px;
+    background-attachment: fixed;
+}
+
+.back-button
+{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 230px 67px 190px 67px 250px 66px 290px;
+    gap: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 15%;
+    padding-left: 15%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.green
+{
+    background-color: #00788b;
+    color: white;
+}
+
+.black
+{
+    background-color: #333333;
+    color: white;
+}
+
+.white
+{
+    background-color: white;
+    color: black;
+}
+
+.left
+{
+    grid-column: 1/2;
+    padding-left: 20%;
+}
+
+.right
+{
+    grid-column: 2/3;
+    padding-left: 15%;
+}
+
+.grid-container div
+{
+    display: flex;
+    align-items: center;
+}
+
+#name
+{
+    padding-top: 30px;
+    grid-row: 1/2;
+    font-size: 55;
+}
+
+#posts
+{
+    padding-top: 30px;
+    grid-row: 1/2;
+    font-size: 25;
+}
+
+#posts ul
+{
+    list-style: none;
+    padding: 0;
+    line-height: 45px;
+}
+
+#uvic
+{
+    border-style: solid;
+    border-right: 1px;
+    border-left: 1px;
+    border-color: rgba(0, 0, 0, 0.292);
+}
+
+#profile-heading
+{
+    grid-row: 2/3;
+    font-size: 28px;
+}
+
+#contact-heading
+{
+    grid-row: 2/3;
+    font-size: 28px;
+}
+
+#profile-content
+{
+    grid-row: 3/4;
+    padding-right: 12%;
+    font-size: large;
+}
+
+#contact-content
+{
+    grid-row: 3/4;
+}
+
+#contact-content ul
+{
+    list-style: none;
+    padding: 0%;
+    font-size: large;
+    line-height: 35px;
+    font-weight: 200;
+}
+
+#contact-content ul a
+{
+    text-decoration: none;
+    color: #2c6baa;
+
+}
+
+#contact-content ul img
+{
+    width: 25px;
+    padding-top: 10px;
+}
+
+#experience-heading
+{
+    grid-row: 4/5;
+    font-size: 28px;
+}
+
+#skill-heading
+{
+    grid-row: 4/5;
+    font-size: 28px;
+}
+
+#experience-content
+{
+    grid-row: 5/8;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#experience-content h2
+{
+    margin-bottom: 0;
+}
+
+#experience-content h4
+{
+    margin-top: 3%;
+    margin-bottom: 0;
+}
+
+#experience-content p
+{
+    text-align: justify;
+    padding-bottom: 30px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #00788b;
+}
+
+#skill-content
+{
+    grid-row: 5/6;
+    font-size: large;
+    line-height: 30px;
+}
+
+#skill-content ul
+{
+    padding: 0;
+}
+
+#education-heading
+{
+    grid-row: 6/7;
+    font-size: 28px;
+}
+
+#education-content
+{
+    flex-direction: column;
+    align-items: flex-start;
+    grid-row: 7/8;
+}
+
+#education-content h2
+{
+    margin-bottom: 0;
+}
+
+#education-content h4
+{
+    margin-top: 3%;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+#education-content p
+{
+    font-size: 17;
+    margin-bottom: 3px;
+    border-style: solid;
+    border-right: 1px;
+    border-top: 1px;
+    border-left: 1px;
+    border-color: rgba(0, 0, 0, 0.292);
+}
+
+@media screen and (max-width: 1000px) 
+{
+    .grid-container
+    {
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 230px 67px 190px 67px 250px 66px 290px;
+        gap: 0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-right: 5%;
+        padding-left: 5%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
