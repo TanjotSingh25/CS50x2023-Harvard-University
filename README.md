@@ -131,7 +131,6 @@ With <a href='https://github.com/Sandhu-Sahil/CS50x2021_Harvard_University'>this
 <br>
 
 - [Week-10 Final Project](https://github.com/TanjotSingh25/CS50x2023-Harvard-University/tree/master/Week-10%20Final%20Project/Monopoly%20Helper)
-  * [Facebook and fake news](https://github.com/Sandhu-Sahil/CS50x2021_Harvard_University/blob/master/Week-10%20%20Ethics/Copy%20of%20Facebook%20and%20Fake%20News_by_Sahilsher%20Singh.pdf)
 
 <br>
 
