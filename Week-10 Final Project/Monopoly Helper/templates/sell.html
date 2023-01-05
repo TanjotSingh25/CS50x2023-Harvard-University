@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Property
+{% endblock %}
+
+{% block navbar %}
+    <p id="placeholder">ROLL</p>
+{% endblock %}
+
+{% block main %}
+
+<div id="property-grid">
+    {% for listing in my_properties %}
+        
+        <div onclick="sell(this.id)" id="{{listing['pid']}}" class="property-card zoom">
+            <div class="property-name" style="background-color: {{ colors[listing['color']] }}; color: white">{{ listing['name'] }}</div>
+            <div class="price-rent">PRICE {{ listing['price'] }} &emsp; RENT {{ listing['rent'] }}</div>
+            <div class="house">
+                <table>
+                    <tr>
+                        <td>With 1 House&emsp;</td>
+                        <td>{{ listing['rent_1h'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>With 2 House&emsp;</td>
+                        <td>{{ listing['rent_2h'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>With 3 House&emsp;</td>
+                        <td>{{ listing['rent_3h'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>With 4 House&emsp;</td>
+                        <td>{{ listing['rent_4h'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>With Hotel&emsp;</td>
+                        <td>{{ listing['rent_hotel'] }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="house-price">One House Cost &emsp; ${{ listing['house_price'] }}<br>
+                                        Mortgage Value &emsp; ${{ listing['mortgage'] }}</div>
+        </div>
+    
+    {% endfor %}
+    {% for listing in my_properties_white %}
+    
+        <div onclick="sell(this.id)" id="{{listing['pid']}}" class="property-card zoom">
+            <div class="property-name" style="background-color: {{ colors[listing['color']] }}; color: black">{{ listing['name'] }}</div>
+            <div class="price-rent">PRICE {{ listing['price'] }}</div>
+            <div class="house-white">
+                {{ listing['rule'] }}
+            </div>
+            <div class="house-price-white">Mortgage Value &emsp; ${{ listing['mortgage'] }}</div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+    <form id="sell" action="/sell" method="post" style="display: none;">
+        <input id="pid" name="pid" type="number" value="">
+        <input name="player" type="number" value="{{player}}">
+        <input type="submit">
+    </form>
+{% endblock %}
+

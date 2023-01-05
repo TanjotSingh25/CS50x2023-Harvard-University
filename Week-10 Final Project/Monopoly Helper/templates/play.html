@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Classic Monopoly
+{% endblock %}
+
+{% block navbar %}
+    <p id="placeholder">ROLL</p>
+{% endblock %}
+
+{% block main %}
+
+    <div class="players-flexbox">
+    {% for i in range(players) %}
+        <div class="player-functions">
+        <div class="player-fixed {{ color[i] }}-card" id="p0">
+            <div class="player-card">
+                <img src="/static/{{ pieces_name[i] }}.png" width="120px">
+                <h2 style="font-size: 35px;">{{ players_name[i] }}</h1>
+                <br>
+                <h2 style="font-size: 30px;">Balance</h1>
+                <h2>${{ balance[i] }}</h2>
+            </div>
+        </div>
+        <form action="/addMoney" method="post" style="width: 100%;">
+            <button id="a{{i}}" type="button" class="{{ color[i] }}-btn btn btn-primary btn-lg" style="width: 70%;" onclick="toggleVisibility(this.id)">Add Money</button>
+            <input type="number" min="0" name="amount" class="hidden a{{i}}" placeholder="Amount">
+            <input type="number" name="player" style="display: none;" value="{{ i }}">
+            <input type="submit" class="hidden a{{i}}" value="Add">
+        </form>
+        <form action="/removeMoney" method="post" style="width: 100%">
+            <button id="r{{i}}" type="button" class="{{ color[i] }}-btn btn btn-primary btn-lg" style="width: 70%;" onclick="toggleVisibility(this.id)">Lose Money</button><br>
+            <input type="number" min="0" name="amount" class="hidden r{{i}}" placeholder="Amount" style="width: 60%;">
+            <input type="number" name="player" style="display: none;" value="{{ i }}">
+            <input type="submit" class="hidden r{{i}}" value="Remove">
+        </form>
+        <form action="/showProperties" method="post" style="width: 100%;">
+            <input type="number" name="player" style="display: none;" value="{{ i }}">
+            <input type="submit" class="{{ color[i] }}-btn btn btn-primary btn-lg" style="width: 70%;" value="My Properties">
+        </form>
+        <form action="/payRent" method="post" style="width: 100%; margin-top: 30px;">
+            <button id="p{{i}}" type="button" class="{{ color[i] }}-btn btn btn-primary btn-lg" style="width: 70%;" onclick="toggleVisibility(this.id)">Pay Rent</button><br>
+            <input type="number" min="0" name="amount" class="hidden p{{i}}" placeholder="Amount" style="width: 60%;">
+            <input type="number" name="player" style="display: none;" value="{{ i }}">
+            <select name="other_player" class="hidden p{{i}}">
+                <option disabled selected value="">Choose the player</option>
+            {% for j in range(players-1) %}
+                <option value="{{ other_players[i][j] }}">{{ other_players[i][j] }}</option>
+            {% endfor %}
+            </select>
+            <input type="submit" class="hidden p{{i}}" value="Pay">
+        </form>
+        </div>
+    {% endfor %}
+    </div>
+
+    <br><br>
+    <h1 style="font-size: 50px; font-weight: bold; color: red; background-color: rgba(240, 248, 255, 0);">{{message}}</h1>
+
+{% endblock %}

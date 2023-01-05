@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Who's Buying
+{% endblock %}
+
+{% block navbar %}
+    <p id="placeholder">ROLL</p>
+{% endblock %}
+
+{% block main %}
+
+    <div id="player_choice">
+        {% for i in range(players_num) %}
+        <form action="/buy" id="form{{i}}" method="get">
+            <input name="player" value="{{i}}" type="number" style="display: none;">
+            <button onclick="submitChoice(this.id)" id="{{i}}" type="submit" class="zoom {{ color[i] }}-btn btn btn-primary btn-lg btn-block" style="margin: 1% 0 1% 0;">{{ players[i] }}</button>
+        </form>
+        {% endfor %}
+    </div>
+
+{% endblock %}

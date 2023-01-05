@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <link href="/static/styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="/static/javascript.js"></script>
+
+        <title>Monopoly: Players</title>
+
+    </head>
+
+    <body onload="foo()" id="template-body">
+
+        <div id="navbar">
+            <img onclick="redirect()" src="/static/logo.png" style="width: 25%;">
+        </div>
+
+        <main class="container-fluid py-5 text-center" style="padding-top: 2rem!important;">
+
+        <div id="flexbox-btns">
+            <a onclick="addPlayer()" class="btn btn-primary btn-lg active" id="addPlayerBtn" role="button" aria-pressed="true">Add Player</a>
+            <a onclick="removePlayer()" class="btn btn-primary btn-lg disabled" id="removePlayerBtn" role="button" aria-pressed="true" style="background-color: red;">Remove Player</a>
+        </div>
+
+        <div id="players-flexbox">
+            <div class="player red" id="p0">
+                <form id="form1" action="/play" method="post">
+                    <input type="text" value="Player 1" placeholder="Player 1" id="player_1_name" name="player_1_name" class="player-name">
+                    <div class="piece">
+                        <select id="piece1" name="piece1">
+                            <option value="1" selected>Hat</option>
+                            <option value="2">Dog</option>
+                            <option value="3">Car</option>
+                            <option value="4">Boat</option>
+                        </select>
+                        <img id="player1piece" src="/static/hat.png" width="120px">
+                    </div>
+                    <label for="balance" style="font-size: 25px;">Balance</label>
+                    <input id="balance" name="balance" type="text" value="$1500" style="text-align: center; font-size: 20px; width: 50%; border-radius: 10px;">
+                </form>
+            </div>
+            <div class="player green" id="p1">
+                <form id="form2" action="/play" method="post">
+                    <input type="text" value="Player 2" placeholder="Player 2" id="player_2_name" name="player_2_name" class="player-name">
+                    <div class="piece">
+                        <select id="piece2" name="piece2">
+                            <option value="1">Hat</option>
+                            <option value="2" selected>Dog</option>
+                            <option value="3">Car</option>
+                            <option value="4">Boat</option>
+                        </select>
+                        <img id="player2piece" src="/static/dog.png" width="120px">
+                    </div>
+                    <label for="balance" style="font-size: 25px;">Balance</label>
+                    <input name="balance" type="text" value="$1500" style="text-align: center; font-size: 20px; width: 50%; border-radius: 10px;">
+                </form>
+            </div>
+            <div class="player blue" id="p2">
+                <form id="form3" action="/play" method="post">
+                    <input type="text" value="Player 3" placeholder="Player 3" id="player_3_name" name="player_3_name" class="player-name">
+                    <div class="piece">
+                        <select id="piece3" name="piece3">
+                            <option value="1">Hat</option>
+                            <option value="2">Dog</option>
+                            <option value="3" selected>Car</option>
+                            <option value="4">Boat</option>
+                        </select>
+                        <img id="player3piece" src="/static/car.png" width="120px">
+                    </div>
+                    <label for="balance" style="font-size: 25px;">Balance</label>
+                    <input name="balance" type="text" value="$1500" style="text-align: center; font-size: 20px; width: 50%; border-radius: 10px;">
+                </form>
+            </div>
+            <div class="player yellow" id="p3">
+                <form id="form4" action="/play" method="post">
+                    <input type="text" value="Player 4" placeholder="Player 4" id="player_4_name" name="player_4_name" class="player-name">
+                    <div class="piece">
+                        <select id="piece4" name="piece4">
+                            <option value="1">Hat</option>
+                            <option value="2">Dog</option>
+                            <option value="3">Car</option>
+                            <option value="4" selected>Boat</option>
+                        </select>
+                        <img id="player4piece" src="/static/boat.png" width="120px">
+                    </div>
+                    <label for="balance" style="font-size: 25px;">Balance</label>
+                    <input name="balance" type="text" value="$1500" style="text-align: center; font-size: 20px; width: 50%; border-radius: 10px;">
+                </form>
+            </div>
+        </div>
+        <button id="letsPlay" type="button" class="btn btn-primary btn-lg disabled" style="background-color: red;" onclick="submitForms()">Let's Play</button>
+
+        <form id="allForms" action="/play" method="post" style="display: none;">
+            <input type="number" name="aplayers_num" id="aplayers_num">
+            <input type="text" name="aplayer_1_name" id="aplayer_1_name">
+            <input type="text" name="aplayer_2_name" id="aplayer_2_name">
+            <input type="text" name="aplayer_3_name" id="aplayer_3_name">
+            <input type="text" name="aplayer_4_name" id="aplayer_4_name">
+            <input type="text" name="apiece1" id="apiece1">
+            <input type="text" name="apiece2" id="apiece2">
+            <input type="text" name="apiece3" id="apiece3">
+            <input type="text" name="apiece4" id="apiece4">
+            <input type="text" name="abalance" id="abalance">
+        </form>
+
+    </main>
+
+</body>
+
+</html>

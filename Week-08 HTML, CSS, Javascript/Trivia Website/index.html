@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            function check()
+            {
+                let ans = document.querySelector("#answer").value;
+                ans = ans.toLowerCase();
+                if (ans == "stag")
+                {
+                    document.querySelector("#answer").style.backgroundColor = "Green";
+                    document.querySelector("#text2").innerHTML = "Correct";
+                    document.querySelector("#text2").style.color = "Green";
+                }
+                else
+                {
+                    document.querySelector("#answer").style.backgroundColor = "Red";
+                    document.querySelector("#text2").innerHTML = "Wrong";
+                    document.querySelector("#text2").style.color = "Red";
+                }
+            }
+
+            function right()
+            {
+                document.querySelector("#text").innerHTML = "Correct";
+                document.querySelector("#text").style.color = "Green";
+            }
+
+            function wrong()
+            {
+                document.querySelector("#text").innerHTML = "Wrong";
+                document.querySelector("#text").style.color = "Red";
+            }
+
+            function revert()
+            {
+                document.querySelector("#W1").style.backgroundColor="#d9edff";
+                document.querySelector("#W2").style.backgroundColor="#d9edff";
+                document.querySelector("#W3").style.backgroundColor="#d9edff";
+                document.querySelector("#C").style.backgroundColor ="#d9edff";
+            }
+
+            document.addEventListener('DOMContentLoaded',function()
+            {
+                document.querySelector("#W1").onclick = function()
+                {
+                    revert();
+                    document.querySelector("#W1").style.backgroundColor ="red";
+                    wrong();
+                };
+                document.querySelector("#W2").onclick = function()
+                {
+                    revert();
+                    document.querySelector("#W2").style.backgroundColor ="red";
+                    wrong();
+                };
+                document.querySelector("#W3").onclick = function()
+                {
+                    revert();
+                    document.querySelector("#W3").style.backgroundColor ="red";
+                    wrong();
+                };
+                document.querySelector("#C").onclick = function()
+                {
+                    revert();
+                    document.querySelector("#C").style.backgroundColor ="green";
+                    right();
+                };
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                    <h3>Who is the author of the world famous Harry Potter Book series?</h3>
+                    <h4 id="text"> </h4>
+                    <button type="button" id="W1">George R.R Martin</button>
+                    <button type="button" id="C">J.K Rowling</button>
+                    <button type="button" id="W2">C.S Lewis</button>
+                    <button type="button" id="W3">Dan Brown</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What form does Harry Potter's patronus charm take?</h3>
+                <h4 id="text2"> </h4>
+                <form autocomplete = "off" onsubmit="check();return false;">
+                    <input type='text' id="answer">
+                    <input type='submit' value='Confirm'>
+                </form>
+                <!-- TODO: Add free response question here -->
+
+            </div>
+
+        </div>
+    </body>
+</html>

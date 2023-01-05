@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <table class="table">
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+        <tr>
+            <td>{{ stock["symbol"] }}</td>
+            <td>{{ stock["name"] }}</td>
+            <td>{{ stock["price"] }}</td>
+        </tr>
+    </table>
+    <form action="/quote" method="get">
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+{% endblock %}

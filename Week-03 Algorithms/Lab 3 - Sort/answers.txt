@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: The time taken by this algorithm for sorting random and reversed numbers was almost equal but for sorted lists it was low, implying that when a sorted list is inputted, it skips the whole process and bubble sort is known to do that.
+
+sort2 uses: Merge Sort
+
+How do you know?: The time taken by this algorithm was consistently lesser than the other two algorithms and almost equal for same length of numbers irrespective of the type (sorted, random, reversed) implying it follows the same algorithm irrespective of the list.
+
+sort3 uses: Selection Sort
+
+How do you know?: The time taken by this algorithm was in between the other two algorithms but the time taken was almost equal for the same length of numbers irrespective of the type (sorted, random, reversed) implying it follows the same algorithm irrespective of the list.

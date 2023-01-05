@@ -1,0 +1,51 @@
+SELECT * FROM crime_scene_reports WHERE year = 2020 AND month = 7 and day = 28;
+SELECT * FROM interviews  WHERE year = 2020 AND month = 7 and day = 28;
+SELECT * FROM courthouse_security_logs WHERE year = 2020 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25;
+SELECT * FROM atm_transactions WHERE year = 2020 AND month = 7 AND day = 28 AND atm_location = "Fifer Street";
+
+SELECT people.name,atm_transactions.account_number FROM people
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
+WHERE (year = 2020 AND month = 7 AND day = 28 AND atm_location = "Fifer Street");
+
+SELECT people.name FROM people
+JOIN courthouse_security_logs ON people.license_plate = courthouse_security_logs.license_plate
+WHERE year = 2020 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25
+INTERSECT
+SELECT people.name FROM people
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
+WHERE (year = 2020 AND month = 7 AND day = 28 AND atm_location = "Fifer Street");
+
+SELECT * FROM flights WHERE origin_airport_id = (SELECT id FROM airports WHERE city LIKE "Fiftyville") AND year = 2020 AND month = 7 AND day = 29 ORDER BY hour;
+
+SELECT people.name, people.passport_number, people.phone_number FROM people
+JOIN passengers ON people.passport_number = passengers.passport_number
+WHERE flight_id = 36;
+
+SELECT people.name FROM people
+JOIN courthouse_security_logs ON people.license_plate = courthouse_security_logs.license_plate
+WHERE year = 2020 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25
+INTERSECT
+SELECT people.name FROM people
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
+WHERE (year = 2020 AND month = 7 AND day = 28 AND atm_location = "Fifer Street")
+INTERSECT
+SELECT people.name FROM people
+JOIN passengers ON people.passport_number = passengers.passport_number
+WHERE flight_id = 36;
+
+SELECT people.name,phone_calls.* FROM people 
+JOIN phone_calls ON people.phone_number = phone_calls.caller
+WHERE year = 2020 AND month = 7 and day = 28
+INTERSECT
+SELECT people.name,phone_calls.* FROM phone_calls
+JOIN people ON phone_calls.caller = people.phone_number
+WHERE name IN ("Danielle","Ernest");
+
+SELECT airports.* FROM airports
+JOIN flights ON airports.id = flights.destination_airport_id
+WHERE flights.id = 36;
+
+SELECT * FROM people WHERE phone_number = (SELECT receiver FROM phone_calls WHERE id = 233 ORDER BY duration LIMIT 1);

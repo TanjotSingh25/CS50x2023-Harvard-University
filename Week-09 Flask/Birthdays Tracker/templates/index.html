@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+    <div class="header">
+        <h1>Birthdays</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+
+            <div class="warning">
+                <p> {{ message }} </p>
+            </div>
+
+
+            <h2>Add a Birthday</h2>
+
+            <form action="/" method="post">
+                <input autocomplete="off" name="name" placeholder="Name" type="text">
+                <input autocomplete="off" name="month" placeholder="Month (1 to 12)" type="text">
+                <input autocomplete="off" name="day" placeholder="Day" type="text">
+                <input type="submit" value="Add Birthday">
+            </form>
+
+        </div>
+
+        <div class="section">
+
+            <h2>All Birthdays</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Birthday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for birthday in birthday_list %}
+                    <tr>
+                        <td>{{ birthday["name"] }}</td>
+                        <td>{{ birthday["month"] }}/{{ birthday["day"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <h1 style="text-align:center" class="text-danger">History</h1>
+    <br>
+    <table class="table">
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number</th>
+            <th scope="col">Action</th>
+            <th scope="col">Price</th>
+            <th scope="col">Time</th>
+        </tr>
+        {% for share in purchases %}
+            <tr>
+                <td> {{ share["symbol"] }} </td>
+                <td> {{ share["name"] }} </td>
+                <td> {{ share["number"] }} </td>
+                {% if share["buy_or_sell"] == "Buy" %}
+                    <td style="color: red; font-weight: bold"> {{ share["buy_or_sell"] }} </td>
+                {% else %}
+                    <td style="color: green; font-weight: bold"> {{ share["buy_or_sell"] }} </td>
+                {% endif %}
+                <td> {{ share["price"] }} </td>
+                <td> {{ share["time"] }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h1 style="text-align:center" class="text-danger">Cash History</h1>
+    <br>
+    <table class="table">
+        <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Time</th>
+        </tr>
+        {% for entry in money_history %}
+            <tr>
+                <td> {{ entry["amount"] }} </td>
+                <td> {{ entry["time"] }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

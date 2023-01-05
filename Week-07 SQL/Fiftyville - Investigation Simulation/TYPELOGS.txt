@@ -1,0 +1,77 @@
+161 | Ruth | 2020 | 7 | 28 | Sometime within ten minutes of the theft, I saw the thief get into a car in the courthouse parking lot and drive away. If you have security footage from the courthouse parking lot, you might want to look for cars that left the parking lot in that time frame.
+162 | Eugene | 2020 | 7 | 28 | I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at the courthouse, I was walking by the ATM on Fifer Street and saw the thief there withdrawing some money.
+163 | Raymond | 2020 | 7 | 28 | As the thief was leaving the courthouse, they called someone who talked to them for less than a minute. In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket.
+
+260 | 2020 | 7 | 28 | 10 | 16 | exit | 5P2BI95
+261 | 2020 | 7 | 28 | 10 | 18 | exit | 94KL13X
+262 | 2020 | 7 | 28 | 10 | 18 | exit | 6P58WS2
+263 | 2020 | 7 | 28 | 10 | 19 | exit | 4328GD8
+264 | 2020 | 7 | 28 | 10 | 20 | exit | G412CB7
+265 | 2020 | 7 | 28 | 10 | 21 | exit | L93JTIZ
+266 | 2020 | 7 | 28 | 10 | 23 | exit | 322W7JE
+267 | 2020 | 7 | 28 | 10 | 23 | exit | 0NTHK55
+
+name      | license_plate | activity
+Patrick   | 5P2BI95       | exit
+Ernest    | 94KL13X       | exit
+Amber     | 6P58WS2       | exit
+Danielle  | 4328GD8       | exit
+Roger     | G412CB7       | exit
+Elizabeth | L93JTIZ       | exit
+Russell   | 322W7JE       | exit
+Evelyn    | 0NTHK55       | exit
+
+id     | name   | phone_number   | passport_number | license_plate
+280744 | Eugene | (666) 555-5774 | 9584465633      | 47592FJ
+430845 | Ruth   | (772) 555-5770 |                 | HZB4129
+937274 | Raymond| (125) 555-8030 |                 | Y18DLY3
+
+246 | 28500762 | 2020 | 7 | 28 | Fifer Street | withdraw | 48
+264 | 28296815 | 2020 | 7 | 28 | Fifer Street | withdraw | 20
+266 | 76054385 | 2020 | 7 | 28 | Fifer Street | withdraw | 60
+267 | 49610011 | 2020 | 7 | 28 | Fifer Street | withdraw | 50
+269 | 16153065 | 2020 | 7 | 28 | Fifer Street | withdraw | 80
+288 | 25506511 | 2020 | 7 | 28 | Fifer Street | withdraw | 20
+313 | 81061156 | 2020 | 7 | 28 | Fifer Street | withdraw | 30
+336 | 26013199 | 2020 | 7 | 28 | Fifer Street | withdraw | 35
+
+name      | account_number
+Ernest    | 49610011
+Russell   | 26013199
+Roy       | 16153065
+Bobby     | 28296815
+Elizabeth | 25506511
+Danielle  | 28500762
+Madison   | 76054385
+Victoria  | 81061156
+
+Danielle
+Elizabeth
+Ernest
+Russell
+
+id | origin_airport_id | destination_airport_id | year | month | day | hour | minute
+36 | 8 | 4  | 2020 | 7 | 29 | 8  | 20
+43 | 8 | 1  | 2020 | 7 | 29 | 9  | 30
+23 | 8 | 11 | 2020 | 7 | 29 | 12 | 15
+53 | 8 | 9  | 2020 | 7 | 29 | 15 | 20
+18 | 8 | 6  | 2020 | 7 | 29 | 16 | 0
+
+name     | passport_number  | phone_number
+Doris    | 7214083635       | (066) 555-9701
+Roger    | 1695452385       | (130) 555-0289
+Ernest   | 5773159633       | (367) 555-5533
+Edward   | 1540955065       | (328) 555-1152
+Evelyn   | 8294398571       | (499) 555-9472
+Madison  | 1988161715       | (286) 555-6063
+Bobby    | 9878712108       | (826) 555-1652
+Danielle | 8496433585       | (389) 555-5198
+
+Danielle
+Ernest
+
+name | id | caller | receiver | year | month | day | duration
+Ernest | 233 | (367) 555-5533 | (375) 555-8161 | 2020 | 7 | 28 | 45
+Ernest | 236 | (367) 555-5533 | (344) 555-9601 | 2020 | 7 | 28 | 120
+Ernest | 245 | (367) 555-5533 | (022) 555-4052 | 2020 | 7 | 28 | 241
+Ernest | 285 | (367) 555-5533 | (704) 555-5790 | 2020 | 7 | 28 | 75
